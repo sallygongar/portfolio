@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/site";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6">
+    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-6">
       <p className="font-mono text-sm text-accent-text">Hi, my name is</p>
       <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
         {siteConfig.name}
