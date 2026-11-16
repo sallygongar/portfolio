@@ -6,6 +6,13 @@ export default function Hero() {
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col-reverse items-center justify-center gap-12 px-6 py-16 md:flex-row md:justify-between md:py-24">
       <div className="max-w-xl text-center md:text-left">
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-muted">
+          <span
+            className="size-2 rounded-full bg-green-500"
+            aria-hidden="true"
+          />
+          {siteConfig.availability}
+        </p>
         <p className="font-mono text-sm text-accent-text">Hi, my name is</p>
 
         <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
