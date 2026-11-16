@@ -3,7 +3,8 @@ export const siteConfig = {
   role: "Frontend Developer",
   tagline: "I turn complex e-commerce flows into simple, reliable interfaces.",
   summary:
-    "Frontend developer working with React, TypeScript and VTEX IO. Currently exploring Next.js and Tailwind CSS.",
+    "Frontend developer with experience in React, TypeScript and VTEX IO. Currently exploring Next.js and Tailwind CSS.",
+  availability: "Open to work · Remote preferred",
   description:
     "Frontend developer building fast, accessible interfaces with React, TypeScript and Next.js.",
   url: "https://portfolio-sallygongar.vercel.app",
