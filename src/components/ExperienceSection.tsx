@@ -4,7 +4,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="mx-auto w-full max-w-5xl scroll-mt-8 px-6 py-16 md:py-24"
+      className="mx-auto w-full max-w-5xl px-6 py-16 md:py-24"
     >
       <p className="font-mono text-sm text-accent-text">Experience</p>
       <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
