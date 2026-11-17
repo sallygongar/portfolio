@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
+/* Hace que las clases dark: de Tailwind reaccionen a data-theme="dark" */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
+  color-scheme: light;
+
   --background: #fafafa;
   --foreground: #0a0a0a;
   --muted: #52525b;
@@ -13,17 +18,17 @@
   --accent-text: #0a6f96;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --muted: #a1a1aa;
-    --border: #27272a;
+:root[data-theme="dark"] {
+  color-scheme: dark;
 
-    --accent: #37baed;
-    --accent-foreground: #0a0a0a;
-    --accent-text: #37baed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #a1a1aa;
+  --border: #27272a;
+
+  --accent: #37baed;
+  --accent-foreground: #0a0a0a;
+  --accent-text: #37baed;
 }
 
 @theme inline {
@@ -42,6 +47,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Deja espacio para el header fijo al saltar a una sección */
+    scroll-padding-top: 4rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
