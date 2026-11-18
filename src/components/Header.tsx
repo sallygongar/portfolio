@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -22,7 +23,7 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Main" className="flex items-center gap-4 sm:gap-6">
-          <ul className="flex items-center gap-4 text-sm sm:gap-6">
+          <ul className="flex items-center gap-3 text-sm sm:gap-6">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a

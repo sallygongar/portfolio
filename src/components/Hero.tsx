@@ -4,7 +4,7 @@ import sally from "@/assets/sally.jpeg";
 
 export default function Hero() {
   return (
-    <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col-reverse items-center justify-center gap-12 px-6 py-16 md:flex-row md:justify-between md:py-24">
+    <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col-reverse items-center justify-center gap-12 px-6 py-14 md:flex-row md:justify-between md:py-20">
       <div className="max-w-xl text-center md:text-left">
         <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-muted">
           <span
