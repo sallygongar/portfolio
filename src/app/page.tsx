@@ -5,7 +5,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col">
+    <main id="main" className="flex flex-1 flex-col">
       <Hero />
       <ProjectsSection />
       <AboutSection />
