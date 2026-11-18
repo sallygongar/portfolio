@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="mx-auto w-full max-w-5xl px-6 py-16 md:py-24"
+      className="mx-auto w-full max-w-5xl px-6 py-14 md:py-20"
     >
       <p className="font-mono text-sm text-accent-text">About</p>
       <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">

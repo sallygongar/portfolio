@@ -14,4 +14,6 @@ export const siteConfig = {
     github: "https://github.com/sallygongar",
     linkedin: "https://www.linkedin.com/in/sally-candelaria-b56a9a183/",
   },
+  contactIntro:
+    "I'm open to new frontend opportunities, ideally remote. If you're hiring, or just want to talk about React, e-commerce or testing, I'd love to hear from you.",
 } as const;
