@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sally González | Portfolio
 
-## Getting Started
+![CI](https://github.com/sallygongar/portfolio/actions/workflows/ci.yml/badge.svg)
 
-First, run the development server:
+Personal portfolio of a frontend developer, built with **Next.js**, **TypeScript** and **Tailwind CSS**.
+
+**Live site:** [portfolio-sallygongar](https://portfolio-sallygongar.vercel.app)
+
+![Portfolio preview](./docs/porfolio.gif)
+
+## What's inside
+
+- **Hero** with an introduction, an open-to-work badge, a CV download and social links.
+- **Projects** with a demo recording, stack tags and links for each one.
+- **About and skills**, grouped by type, with a marker for what I am still learning.
+- **Experience** timeline and education.
+- **Contact** card with email, LinkedIn and GitHub.
+- **Light and dark theme** that follows the system preference and remembers the visitor's choice.
+
+## Tech stack
+
+|               |                                                       |
+| :------------ | :---------------------------------------------------- |
+| **Framework** | [Next.js](https://nextjs.org/) 16 (App Router)        |
+| **Language**  | TypeScript                                            |
+| **Styling**   | [Tailwind CSS](https://tailwindcss.com/) v4           |
+| **Fonts**     | Geist and Geist Mono through `next/font`              |
+| **Linting**   | ESLint                                                |
+| **CI**        | GitHub Actions (lint and build on every pull request) |
+| **Hosting**   | Vercel                                                |
+
+## Design and engineering decisions
+
+- **Design tokens as CSS variables.** Colors are defined once in `globals.css` and mapped to Tailwind with `@theme`, so components use names like `bg-accent` or `text-muted` and never a hex value. Changing the accent color is a two-line edit.
+- **Theme without a flash.** The theme lives in a `data-theme` attribute on `<html>`. A small inline script sets it before the first paint, using the saved choice or falling back to the system preference. The toggle needs no state: both icons are always in the HTML and CSS decides which one to show.
+- **Server Components by default.** Only the theme toggle is a Client Component, so the rest of the page is sent as plain HTML. The site is generated at build time and served as static files.
+- **Content in typed data files.** Site info, projects, skills and experience live in `src/lib`, separated from the components, so adding a project means adding an object to a list.
+- **Images.** The portrait is imported statically and served through `next/image`. The project recordings are GIFs, so they are served as they are.
+- **Accessibility.** Semantic landmarks and a heading hierarchy, a skip link, a visible keyboard focus, text for links that open in a new tab, decorative elements hidden from screen readers, and reduced motion respected.
+
+## Getting started
+
+Requires **Node.js 20.9 or higher**.
 
 ```bash
+git clone https://github.com/sallygongar/portfolio.git
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | What it does                   |
+| :-------------- | :----------------------------- |
+| `npm run dev`   | Starts the development server  |
+| `npm run build` | Builds the site for production |
+| `npm run start` | Serves the production build    |
+| `npm run lint`  | Runs ESLint                    |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+public/
+├── projects/            # Demo recordings of each project
+└── sally-gonzalez-cv.pdf
+src/
+├── app/                 # Layout, home page and global styles
+├── assets/              # Images imported by components
+├── components/          # Header, Hero, sections, project card, theme toggle
+└── lib/                 # Typed data: site, projects, about and experience
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] Responsive layout with light and dark themes
+- [x] Header with navigation and a theme toggle
+- [x] Projects, about, experience and contact sections
+- [x] Continuous integration with GitHub Actions
+- [ ] Case study pages for each project (dynamic routes and MDX)
+- [ ] SEO metadata, Open Graph image, sitemap and robots
+- [ ] Custom illustrated avatar and a new accent color
+- [ ] Lighthouse scores published here
 
-## Deploy on Vercel
+## Related repositories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The projects shown on the site live in
+[react-advanced-apps](https://github.com/sallygongar/react-advanced-apps).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+Distributed under the MIT License.
